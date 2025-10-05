@@ -90,5 +90,10 @@ int main()
     RemoveLeadingZerosFromIPAddress(address);
     std::cout << address << std::endl;
 
+    strcpy_s(address, "004.004.004.004");
+    std::cout << address << " -> ";
+    RemoveLeadingZerosFromIPAddress(address);
+    std::cout << address << std::endl;
+
 }
 
