@@ -49,7 +49,7 @@ int main()
     RemoveLeadingZerosFromIPAddress(address);
     std::cout << address << std::endl;
 
-    // on main committed
+    // on main 111 committed
     char address[40] = "192.001.012.0";
     std::cout << address << " -> ";
     RemoveLeadingZerosFromIPAddress(address);
