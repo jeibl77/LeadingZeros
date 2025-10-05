@@ -49,6 +49,12 @@ int main()
     RemoveLeadingZerosFromIPAddress(address);
     std::cout << address << std::endl;
 
+    // on main committed
+    char address[40] = "192.001.012.0";
+    std::cout << address << " -> ";
+    RemoveLeadingZerosFromIPAddress(address);
+    std::cout << address << std::endl;
+
     strcpy_s(address, "00.000.0.000");
     std::cout << address << " -> ";
     RemoveLeadingZerosFromIPAddress(address);
