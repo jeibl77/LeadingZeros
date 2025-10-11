@@ -2,6 +2,25 @@
 //
 
 #include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+
+
+
+static std::vector<std::string> splitString(const std::string& input, char delimiter)
+{
+    std::vector<std::string> parts;
+    std::stringstream ss(input);
+    std::string item;
+
+    while (std::getline(ss, item, delimiter))
+    {
+        parts.push_back(item);
+    }
+
+    return parts;
+}
 
 static void RemoveLeadingZerosFromIPAddress(char* address)
 {
@@ -34,6 +53,12 @@ static void RemoveLeadingZerosFromIPAddress(char* address)
 
 int main()
 {
+
+    std::vector<std::string> parts;
+    
+    std::string input = ".42";
+    parts = splitString(input, '.');
+
     std::string s = u8"€";
     std::cout << "size=" << s.size() << " length=" << s.length() << " content=" << s << std::endl;
     for (size_t i = 0; i < s.size(); i++)
@@ -44,10 +69,6 @@ int main()
         std::cout << std::hex << (int)c << " ";
     std::cout << std::endl;
 
-    char address[40] = "192.001.012.0";
-    std::cout << address << " -> ";
-    RemoveLeadingZerosFromIPAddress(address);
-    std::cout << address << std::endl;
 
     // on main 111 committed
     char address[40] = "192.001.012.0";
